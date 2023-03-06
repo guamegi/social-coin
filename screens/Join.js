@@ -53,13 +53,19 @@ const Join = () => {
     try {
       await auth().createUserWithEmailAndPassword(email, password);
     } catch (e) {
-      // console.log(e);
+      console.log(e);
       switch (e.code) {
         case "auth/weak-password": {
           Alert.alert("Write a stronger password!");
         }
+        case "auth/email-already-in-use": {
+          Alert.alert(
+            "The email address is already in use by another account."
+          );
+        }
       }
     }
+    setLoading(false);
   };
   return (
     <Container>
