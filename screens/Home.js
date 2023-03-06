@@ -49,7 +49,7 @@ const Home = () => {
         ItemSeparatorComponent={() => <View style={{ height: 10 }}></View>}
         keyExtractor={(item) => item.id}
         renderItem={({ item, index }) => (
-          <Coin index={index} symbol={item.symbol} />
+          <Coin index={index} symbol={item.symbol} id={item.id} />
         )}
       />
     </Container>
